@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aliens VS Astros</title>
+</head>
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(7, 2, 33);
+        color: white;
+        text-align: center;
+        background-image: url(twinklingstarsbg.gif);
+        background-size: auto;
+        width: 99.2%;
+    }
+
+    header {
+        background-image: url(header-stars-background-design.jpg);
+        padding: 5px;
+        border-bottom: 1px solid midnightblue;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    main {
+        background-color: rgba(255, 255, 255, 0.143);
+        border: 1px solid white;
+        box-shadow: 0 0 6px 6px rgba(0, 0, 184, 0.392);
+        width: 90%;
+        margin: auto;
+        border-radius: 7px;
+        padding: 10px;
+    }
+
+
+    section {
+        background-color: rgba(111, 22, 195, 0.474);
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+
+
+    article {
+        display: flex;
+    }
+
+
+    button {
+        border: none;
+        background-color: lightblue;
+        padding: 20px;
+        color: darkblue;
+        border-radius: 20px;
+        box-shadow: 3px 3px 1px white;
+        margin: 30px;
+    }
+
+    button a {
+        text-decoration: none;
+        padding: 20px;
+    }
+
+
+
+    .parent {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 10px;
+        margin: auto;
+        padding: 10px;
+    }
+
+
+    .parent .storycard {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(117, 189, 197, 0.793);
+        padding: 13px;
+        border-radius: 10px;
+    }
+
+    .parent .storycard img {
+        width: 250px;
+        height: 200px;
+        margin: auto;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .parent .storycard .storytext {
+        background-color: rgba(0, 0, 0, 0.484);
+        border-radius: 7px;
+        margin: auto;
+        padding: 5px;
+    }
+
+
+
+    footer {
+        width: 100%;
+        background-color: midnightblue;
+        padding: 3px;
+        margin-top: 30px;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Aliens VS Astros</h1>
+    </header>
+    <main>
+        <!-- welcome page and group info-->
+        <section style="background-image: url(imgspacebg.jpg); background-size: cover; height: 500px; margin: 20px;">
+
+            <div class=".welcome" style="display: flex; margin: 0; text-align: left; gap: 10px;">
+                <img src="welcome.jpg" alt="img" style="width: 900px; height: 280px; border: 1px solid white;">
+                <div class="welctext" style="background-color: rgba(0, 0, 0, 0.30); padding: 10px;">
+                    <h1>Welcome to Aliens VS Astros</h1>
+                    <!--honestly idk what to write in the brief intro--> <!--great, me neither!!-->
+                    <p>
+                        This website game is made for our group project assignment purposes only.
+                        Our project is to work with Makey Makey. We have decided to use the theme of fighting in space
+                        game
+                    </p>
+                    <p>Our group members are:</p>
+                    <ul>
+                        <li>AbdulHadi</li>
+                        <li>Obaidullah</li>
+                        <li>Patrick</li>
+                        <li>Rhea</li>
+                        <li>Noor Zahra</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="welctext2"
+                style="text-align: left; background-color: rgba(0, 0, 0, 0.30); padding: 10px; margin-top: 10px; line-height: 15px;">
+                <p>We were going to use Space Invaders but we felt like we can do better, mostly because we wanted a
+                    personalized game
+                    and not just use any random game online</p>
+                <p>
+                    As making our own website game wasn't exactly part of the assignment and we wanted to make it for
+                    our own satisfaction
+                    3 group members: Abdulhadi, Patrick and Noor had decided to work on the game part of this project.
+                </p>
+                <p>Patrick writing the story while Noor and AbdulHadi working on the code while the other 2 group
+                    members working on the actual assignment
+                <p>
+                    ofcourse that doesn't mean only two people worked on that alone while us 3 decided to sit and use
+                    our laptop all day.
+                    We worked on the assignment together as a team and 3 of us volunteered to do the extra part which is
+                    making this website game</p>
+                <p>We will upload this game on github so it can be easily used by any one of our computer with the
+                    github link within the group</p>
+            </div>
+
+        </section>
+
+        <!--story-->
+        <section>
+            <h2>Background story of our game:</h2>
+
+            <article>
+                <div class="parent">
+                    <!--the story card will have 2 things: an image and text.-->
+                    <div class="storycard">
+                        <img src="imgcheckingsignals.jpg">
+                        <div class="storytext">
+                            <p>
+                                This morning, scientists of the Terran Space Force were picking
+                                up signals to see if there was any lifeform across the galaxy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="storycard">
+                        <img src="aliensIncoming.jpg">
+                        <br>
+                        <div class="storytext">
+                            <p>
+                                Suddenly they picked up and decoded certain signal nearby,
+                                the presence of Aliens heading towards Earth at a
+                                terrifying sight of multiple spaceships inbound was detected.
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="storycard">
+                        <img src="rookie.jpg">
+                        <br>
+                        <div class="storytext">
+                            <p>
+                                Commander Tom Lightyear has ordered the Astronauts, including a promising
+                                recruit, you are the rookie who must prepare and launch to space
+                                with available arms at the table. This will be your first time on
+                                duty, in service of the TSF, to destroy all aliens out of this world.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+
+
+        </section>
+
+
+        <section style="padding: 30px;">
+            <article style=" width: 70%; margin: auto; background-color: rgba(127, 255, 212, 0.546); padding: 10px;">
+                <div class="user" style="display: flex;">
+                    <img src="character.gif" alt="spaceship" style="width: 200px; ">
+                    <p style="padding: 20px; width: 400px; margin-top: 50px; height: 100px;">This is your spaceship.
+                        You are the rookie assigned
+                        to defeat the enemies coming up ahead. Our planet's safety is now in
+                        your hands and it is up to you to save our home planet, Earth.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <button>
+            <a href="level1.html">Let's save our earth</a>
+        </button>
+    </main>
+    <footer>@2023 Makey makey game. Group: Noor, Rhea, AbdulHadi, Obaidullah, Patrick</footer>
+</body>
+
+</html>

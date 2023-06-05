@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<!--this means the user can click anywhere inside the html document and the character will jump-->
+
+    <head>
+        <title> simple game </title> <!--heading-->
+        <style>
+            
+* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body{
+    background-image: url(twinklingstarsbg.gif);
+    padding: 0;
+    margin: 0;
+}
+
+
+h1{
+    margin: 3px;
+    padding: 20px;
+    width: 100%;
+    background-image: url(header-stars-background-design.jpg);
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 3px blue;
+    border-bottom: 1px solid dodgerblue;
+}
+
+/*game board*/
+.bg{
+    background-image: url(the-background-image-space-galaxy.jpg);
+    background-size: cover;
+    width: 600px;
+    height: 205px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+/*character*/
+#pink{
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    position: absolute; /*this will help overlap*/
+    top: 200px;
+}
+
+/*image of the character*/
+#imgp{
+    width: 100%;
+    height: 90%;
+}
+
+/*bullet img*/
+#imgb{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: drop-shadow(0 0 5px rgba(235, 55, 0, 0.565));
+}
+
+/*bullet*/
+#blue{
+    width: 40px;
+    height: 20px;
+    padding: 0;
+    position: absolute; /*this position helps overlap on the div*/
+    top: 220px; /*the distance the obstacle has from the top*/
+    left: 750px; /*the distance the obstacle has from the left*/
+    animation: blue 2s infinite linear;
+}
+
+/*this will help slide the obstacle from the right to left*/
+@keyframes blue{
+    0%{
+        left: 500px;
+    }
+    100%{
+        left: -20px;
+    }
+}
+
+/*this will animate the jump*/
+@keyframes jump{
+    0%{
+        top: 150px;
+    }
+    30%{
+        top: 50px
+    }                
+    75%{
+        top: 50px
+    }                
+    100%{
+        top: 150px
+    }
+}
+
+/*animation class for the character to jump smoothly in linear which will take 0.3 second*/
+.animate{
+    animation: jump 0.3s linear;
+}
+
+
+
+/*Alien img*/
+#enemyimg{
+    width: 50px;
+    margin-top: 100px;
+    margin-left: 550px;
+    position: absolute;
+}
+
+.text {
+        background-color: rgba(50, 0, 157, 0.326);
+        padding: 20px;
+        margin: auto;
+        margin-bottom: 30px;
+        margin-top: 100px;
+        width: 800px;
+        border-radius: 10px;
+        font-family: sans-serif;
+        text-align: justify center;
+        margin-top: 5%;
+    }
+
+button {
+        border: none;
+        background-color: lightblue;
+        padding: 20px;
+        color: darkblue;
+        border-radius: 20px;
+        box-shadow: 3px 3px 1px white;
+    }
+
+    button a {
+        text-decoration: none;
+        padding: 20px;
+    }
+    footer {
+        width: 100%;
+        background-color: midnightblue;
+        padding: 3px;
+        margin-top: 30px;
+    }
+
+        </style>
+        
+    </head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <body>
+
+        <!--giving the score heading-->
+        <h1>
+            Level 1<span id="scprespan"></span>
+        </h1>
+        <!-- bg, character, obstacle and alien-->
+        <section id="game board" style="width: 100%;" onclick="jump()">
+            <div class="bg"> <!--this is where the game will be and everything will be inside this div-->
+                <!--background-->
+                <img src="alien-1.gif" id="enemyimg" >
+                
+                <!--character-->
+                <div id="pink"><!--the user can control this div-->
+                    <img src="character.gif" id="imgp" width="30px">
+                </div>
+                
+                <!--obstacle-->
+                <div id="blue"><!--an obstacle which usser has to avoid otherwise the game will be over-->
+                    <img src="fireing.png" id="imgb">
+                </div>         
+            </div>
+        </section>
+
+        <section style="width: 500px; height: 100px; color: white; margin-left: 750px; margin-top: -100px;">
+            <h2>Click anyhwere on the screen to Jump</h2>
+        </section>
+        
+        <section style="margin: auto; width: 80%; color: white; margin-top: -30px;">
+        
+        
+            <p class="text">
+                The Astronauts of the TSF have won the fight, but the war has just begun. The loss of the Lieutenant 'Zapman'
+                is enough to anger that of Emperor 'Zurgothrax,' the leader of an Alien Empire, whose sought vengeance for
+                their humiliation from the first wave.
+            </p>
+        
+            <button>
+                <a href="index.html">got to home</a>
+            </button>
+            <button>
+                <a href="level2.html">Continue...</a>
+            </button>
+        
+        </section>
+        <footer>
+            @may2023Game made by Noor Zahra, Rhea, Patrick, Abdulhadi, and Obaidullah
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            var pink = document.getElementById("pink") //character
+var blue = document.getElementById("blue") //obstacle
+var counter = 0;
+
+//creating a function called jump()
+function jump(){
+    pink.classList.add("animate"); //this will help the character to jump / animate
+    //this will only run once
+
+    //removing the animate class so that it can run again
+    setTimeout(function(){
+        pink.classList.remove("animate");
+    },300);
+    //300ms is how long the jump animation will take
+}
+
+
+//creating a function which will check if the user has lost or not
+var check = setInterval(function () {
+    //returning the top position with parseInt
+    let pinkTop = parseInt(window.getComputedStyle(pink).getPropertyValue("top"));
+    let blueLeft = parseInt(window.getComputedStyle(blue).getPropertyValue("left"));
+   
+    //making a condition where if all the conditions are met, so that means the user has lost
+    if (blueLeft < 20 && blueLeft > -20 && pinkTop >= 130) {
+        blue.style.animation = "none";
+       
+        alert("Game Over. score: " + counter / 100);
+        counter = 0;
+        blue.style.animation = "blue 2s infinite linear";
+        
+    } 
+    
+    //if the conditions are not met meaning the user has not lost yet then their score gets higher
+    else {
+        counter++;
+     
+        document.getElementById("scoreSpan").innerHTML = counter / 100;
+    }
+}, 10);
+        </script>
+    </body>
+</html>
